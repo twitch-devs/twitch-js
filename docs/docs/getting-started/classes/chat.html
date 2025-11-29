@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Class - TwitchJS</title>
+    <meta name="description" content="TwitchJS Chat client for Twitch IRC - messages, cheers, subscriptions.">
+    <style>:root{--p:#9147ff;--bg:#0e0e10;--s:#18181b;--t:#efeff1;--m:#adadb8;--g:#00f593}*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}.c{max-width:1000px;margin:0 auto;padding:20px}header{background:var(--s);border-bottom:1px solid #303032;padding:16px 0;margin-bottom:40px}nav{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:0 auto;padding:0 20px}.logo{font-size:24px;font-weight:bold;color:var(--p);text-decoration:none}.nav a{color:var(--m);text-decoration:none;margin-left:24px}h1{font-size:36px;margin-bottom:16px}h2{font-size:24px;margin:40px 0 16px;padding-top:20px;border-top:1px solid #303032}h3{font-size:18px;margin:24px 0 12px;color:var(--g)}p{margin-bottom:16px;color:var(--m)}.code{background:#1a1a1d;padding:16px;border-radius:8px;overflow-x:auto;margin:16px 0}code{font-family:Monaco,Consolas,monospace;font-size:14px}.method{background:var(--s);padding:20px;border-radius:8px;margin:16px 0;border-left:3px solid var(--p)}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{text-align:left;padding:12px;border-bottom:1px solid #303032}th{color:var(--t);background:var(--s)}.sidebar{background:var(--s);padding:20px;border-radius:8px;margin-top:40px}.sidebar h4{margin-bottom:12px}.sidebar ul{list-style:none}.sidebar li{padding:6px 0}.sidebar a{color:var(--p);text-decoration:none}footer{margin-top:60px;padding:40px 0;text-align:center;color:var(--m);border-top:1px solid #303032}</style>
+</head>
+<body>
+    <header><nav>
+        <a href="/twitch-js/docs/getting-started" class="logo">TwitchJS</a>
+        <div class="nav">
+            <a href="/twitch-js/docs/classes/chat.html">Chat</a>
+            <a href="/twitch-js/docs/classes/api.html">API</a>
+            <a href="/twitch-js/docs/globals.html">Reference</a>
+            <a href="https://github.com/twitch-devs/twitch-js">GitHub</a>
+        </div>
+    </nav></header>
+    <main class="c">
+        <h1>Class: Chat</h1>
+        <p>IRC client for Twitch chat - messages, cheers, subscriptions, and moderation events.</p>
+        <h2>Constructor</h2>
+        <div class="method"><div class="code"><code><pre>import TwitchJs from 'twitch-js'
+
+const { chat } = new TwitchJs({
+  username: 'your_username',
+  token: 'oauth:your_token'
+})</pre></code></div></div>
+        <h2>Methods</h2>
+        <h3>connect()</h3>
+        <div class="method"><p>Connects to Twitch IRC.</p><div class="code"><code>await chat.connect()</code></div></div>
+        <h3>join()</h3>
+        <div class="method"><p>Joins a channel.</p><div class="code"><code>await chat.join('#channelname')</code></div></div>
+        <h3>say()</h3>
+        <div class="method"><p>Sends a message.</p><div class="code"><code>await chat.say('#channel', 'Hello!')</code></div></div>
+        <h2>Events</h2>
+        <table><tr><th>Event</th><th>Description</th></tr><tr><td>PRIVMSG</td><td>Chat message</td></tr><tr><td>USERNOTICE</td><td>Sub, raid, ritual</td></tr><tr><td>CLEARCHAT</td><td>Ban/timeout</td></tr></table>
+        <h3>Handling Cheers</h3>
+        <div class="method"><div class="code"><code><pre>chat.on('PRIVMSG', (msg) => {
+  if (msg.tags.bits) {
+    console.log(`${msg.username} cheered ${msg.tags.bits} bits!`)
+  }
+})</pre></code></div><p>For bit values, see <a href="https://theviewbot.com/blog/what-are-twitch-bits-worth">Twitch Bits Calculator</a>.</p></div>
+        <div class="sidebar"><h4>📚 Related</h4><ul><li><a href="/twitch-js/docs/classes/api.html">API Client</a></li><li><a href="/twitch-js/docs/globals.html">Reference</a></li></ul><h4 style="margin-top:20px">🛠️ Streamer Tools</h4><ul><li><a href="https://theviewbot.com/tools">Stream Analytics</a></li><li><a href="https://theviewbot.com/tools/kick-statistics">Kick Stats</a></li><li><a href="https://theviewbot.com/dashboard">Viewer Dashboard</a></li></ul></div>
+    </main>
+    <footer><p>TwitchJS | <a href="https://github.com/twitch-devs/twitch-js" style="color:var(--p)">GitHub</a></p></footer>
+</body>
+</html>
