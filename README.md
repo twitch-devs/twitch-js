@@ -2,14 +2,14 @@
   <img width="128" src="media/logo.svg">
 </p>
 
-# [DEPRECATED] [TwitchJS](https://twitch-js.netlify.com/)
+## Documentation
 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
-[![Coverage status](https://img.shields.io/codecov/c/github/twitch-js/twitch-js/next.svg?longCache=true&style=flat-square)](https://codecov.io/gh/twitch-js/twitch-js/branch/next)
-[![NPM version](https://img.shields.io/npm/v/twitch-js.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/twitch-js)
-[![NPM downloads](https://img.shields.io/npm/dm/twitch-js.svg?longCache=true&style=flat-square)](https://www.npmjs.com/package/twitch-js)
-[![GitHub issues](https://img.shields.io/github/issues-raw/twitch-js/twitch-js.svg?longCache=true&style=flat-square)](https://github.com/twitch-js/twitch-js/issues)
-[![GitHub bug issues](https://img.shields.io/github/issues-raw/twitch-js/twitch-js/bug?style=flat-square)](https://github.com/twitch-js/twitch-js/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+- [Getting Started](https://twitch-devs.github.io/twitch-js/)
+- [Chat Client](https://twitch-devs.github.io/twitch-js/classes/chat.html)
+- [API Client](https://twitch-devs.github.io/twitch-js/classes/api.html)
+- [Full Reference](https://twitch-devs.github.io/twitch-js/globals.html)
+- [Streamer Tools](https://twitch-devs.github.io/twitch-js/streamer-tools.html)
+```
 
 A community-centric, community-supported Twitch JavaScript SDK.
 
