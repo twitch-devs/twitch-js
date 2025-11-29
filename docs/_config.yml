@@ -1,0 +1,11 @@
+title: TwitchJS Documentation
+description: A community-centric, community-supported Twitch JavaScript SDK
+baseurl: "/twitch-js"
+url: "https://twitch-devs.github.io"
+
+# SEO
+author: TwitchJS Community
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
