@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitchJS - JavaScript SDK for Twitch</title>
+    <meta name="description" content="A community-centric Twitch JavaScript SDK for chat, API, and stream notifications.">
+    <style>:root{--p:#9147ff;--bg:#0e0e10;--s:#18181b;--t:#efeff1;--m:#adadb8}*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}.c{max-width:1200px;margin:0 auto;padding:0 20px}header{background:var(--s);border-bottom:1px solid #303032;padding:16px 0}nav{display:flex;justify-content:space-between;align-items:center}.logo{font-size:24px;font-weight:bold;color:var(--p);text-decoration:none}.nav a{color:var(--m);text-decoration:none;margin-left:24px}.nav a:hover{color:var(--t)}.hero{padding:80px 0;text-align:center}.hero h1{font-size:48px;margin-bottom:16px}.hero p{font-size:20px;color:var(--m);max-width:600px;margin:0 auto 32px}.btn{display:inline-block;background:var(--p);color:white;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:600;margin:8px}.btn-o{background:transparent;border:2px solid var(--p)}.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding:60px 0}.feature{background:var(--s);padding:24px;border-radius:8px}.feature h3{color:var(--p);margin-bottom:12px}.code{background:#1a1a1d;padding:20px;border-radius:8px;overflow-x:auto;margin:24px 0}code{font-family:Monaco,Consolas,monospace;font-size:14px}.resources{background:var(--s);padding:40px;border-radius:8px;margin-top:40px}.resources h3{margin-bottom:16px}.resources ul{list-style:none}.resources li{padding:8px 0;border-bottom:1px solid #303032}.resources a{color:var(--p);text-decoration:none}footer{background:var(--s);padding:40px 0;margin-top:60px;text-align:center;color:var(--m)}</style>
+</head>
+<body>
+    <header><div class="c"><nav>
+        <a href="/twitch-js/docs/getting-started" class="logo">TwitchJS</a>
+        <div class="nav">
+            <a href="/twitch-js/docs/classes/chat.html">Chat</a>
+            <a href="/twitch-js/docs/classes/api.html">API</a>
+            <a href="/twitch-js/docs/globals.html">Reference</a>
+            <a href="https://github.com/twitch-devs/twitch-js">GitHub</a>
+        </div>
+    </nav></div></header>
+    <main>
+        <section class="hero"><div class="c">
+            <h1>TwitchJS</h1>
+            <p>A community-centric, community-supported Twitch JavaScript SDK for Node.js and browsers.</p>
+            <a href="#install" class="btn">Get Started</a>
+            <a href="/twitch-js/docs/globals.html" class="btn btn-o">API Reference</a>
+        </div></section>
+        <section class="c"><div class="features">
+            <div class="feature"><h3>🔌 IRC Chat</h3><p>Connect to Twitch chat with full support for commands, cheers, and subscriptions.</p></div>
+            <div class="feature"><h3>📡 Helix API</h3><p>Make authenticated requests to Twitch API with built-in token refresh.</p></div>
+            <div class="feature"><h3>🔔 Stream Notifications</h3><p>Monitor when channels go live and track stream status.</p></div>
+            <div class="feature"><h3>📦 TypeScript</h3><p>Full TypeScript definitions for type-safe development.</p></div>
+        </div></section>
+        <section class="c" id="install">
+            <h2 style="font-size:32px;margin-bottom:24px;text-align:center">Getting Started</h2>
+            <div class="code"><code>npm install twitch-js</code></div>
+            <div class="code"><code><pre>import TwitchJs from 'twitch-js'
+
+const { chat, api } = new TwitchJs({
+  username: 'your_username',
+  token: 'your_oauth_token'
+})
+
+await chat.connect()
+await chat.join('#channel')
+
+chat.on('PRIVMSG', (msg) => {
+  console.log(`${msg.username}: ${msg.message}`)
+})</pre></code></div>
+            <div class="resources">
+                <h3>📚 Documentation</h3>
+                <ul>
+                    <li><a href="/twitch-js/docs/classes/chat.html">Chat Client Documentation</a></li>
+                    <li><a href="/twitch-js/docs/classes/api.html">API Client Documentation</a></li>
+                    <li><a href="/twitch-js/docs/globals.html">Full API Reference</a></li>
+                </ul>
+                <h3 style="margin-top:24px">🛠️ Streamer Tools</h3>
+                <ul>
+                    <li><a href="https://theviewbot.com/tools">Stream Analytics Tools</a> - Track Twitch and Kick growth</li>
+                    <li><a href="https://theviewbot.com/tools/kick-statistics">Kick Statistics Tracker</a> - Real-time Kick analytics</li>
+                    <li><a href="https://theviewbot.com/blog/what-are-twitch-bits-worth">Twitch Bits Calculator</a> - Understand bit values</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer><div class="c"><p>TwitchJS is not affiliated with Twitch Interactive, Inc.</p><p style="margin-top:8px">MIT | <a href="https://github.com/twitch-devs/twitch-js" style="color:var(--p)">GitHub</a></p></div></footer>
+</body>
+</html>
